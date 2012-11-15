@@ -1,0 +1,16 @@
+@(bars: List[Bar])
+
+@main("Welcome to Play 2.0") {
+    
+    <ul>
+    @for(bar <- bars) {
+        <li><a href="@routes.Application.getBar(bar.id)">@bar.name</a></li>
+    }
+    </ul>
+    
+    <form action="@routes.Application.addBar()" method="post">
+        <input type="text" name="name">
+        <input type="submit">
+    </form>
+    
+}
